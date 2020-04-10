@@ -2,7 +2,7 @@
 Сервис поиска новостей
 
 # Демо
-К api можно обратиться по адресу `api.karpov-portfolio.tk`, к статике по адресу `karpov-portfolio.tk` или по ip `84.201.189.11`
+К api можно обратиться по адресу `api.karpov-portfolio.tk`, к статике по адресу `karpov-portfolio.tk` или по ip `84.201.189.46`
 
 ## В работе использовались:
 Node js, MongoDB, Mongoose, Express

@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node node.js",
         "dev": "cross-env NODE_ENV=development nodemon node.js",
-        "env": "scp .env karpov@84.201.189.11:/home/karpov/portfolio-backend/"
+        "env": "scp .env karpov@84.201.189.46:/home/karpov/portfolio-backend/"
     },
     "repository": {
         "type": "git",
