@@ -23,7 +23,7 @@ module.exports = (req, res, next) => {
 
     req.body.userId = payload._id; // записываем пейлоуд в объект запроса
     return User.findById(req.body.userId)
-        .orFail(new NotFoundError(messages.auth.notFoundError))
+        .orFail(new NotFoundError(messages.auth.notFound))
         .then(() => next())
         .catch(next);
 };

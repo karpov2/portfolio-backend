@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const schemas = require('../middleware/schemas/registration');
-const registration = require('../controllers/registration');
+const { registration } = require('../controllers/registration');
 
-router.post('/', schemas.registration, registration); // создание пользователя
+// создание пользователя
+router.post('/', schemas.registration, registration);
 
 module.exports = router;

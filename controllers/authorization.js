@@ -5,7 +5,7 @@ const config = require('../config');
 const Unauthorized = require('../middleware/errors/unauthorized');
 const messages = require('../middleware/errors/messages');
 
-module.exports = (req, res, next) => {
+module.exports.authorization = (req, res, next) => {
     // Получаю авторизационные данные из запроса
     const { email, password } = req.body;
 
