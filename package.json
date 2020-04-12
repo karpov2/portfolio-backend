@@ -5,8 +5,8 @@
     "main": "node.js",
     "scripts": {
         "start": "node node.js",
-        "dev": "cross-env NODE_ENV=development nodemon node.js",
-        "env": "scp .env karpov@84.201.189.46:/home/karpov/portfolio-backend/"
+        "dev": "nodemon node.js",
+        "env": "scp env/.env karpov@84.201.189.46:/home/karpov/portfolio-backend/"
     },
     "repository": {
         "type": "git",
@@ -19,7 +19,6 @@
     },
     "homepage": "https://github.com/karpov2/portfolio-backend#readme",
     "devDependencies": {
-        "cross-env": "7.0.2",
         "eslint": "6.8.0",
         "eslint-config-airbnb-base": "14.1.0",
         "eslint-plugin-import": "2.20.2",

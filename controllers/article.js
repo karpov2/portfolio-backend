@@ -1,7 +1,7 @@
 const Article = require('../models/article');
 const NotFoundError = require('../middleware/errors/not-found');
 const BadRequest = require('../middleware/errors/bad-request');
-const Unauthorized = require('../middleware/errors/unauthorized');
+const Forbidden = require('../middleware/errors/forbidden');
 const messages = require('../middleware/errors/messages');
 
 // возвращает все статьи
@@ -32,7 +32,7 @@ module.exports.deleteArticle = (req, res, next) => {
         .then((article) => {
             if (!article) throw new NotFoundError(messages.deleteArticle.notFound);
             if (!article.owner.equals(req.body.userId)) {
-                throw new Unauthorized(messages.deleteArticle.unauthorized);
+                throw new Forbidden(messages.deleteArticle.unauthorized);
             }
 
             return Article.deleteOne(article)
