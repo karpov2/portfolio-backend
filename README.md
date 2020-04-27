@@ -45,4 +45,4 @@ npm run dev
 
 ## Версионность проекта
 
-Доступные версии смотрите в [тегах этого репозитория](https://github.com/karpov2/Mesto/tags).
+Доступные версии смотрите в [тегах этого репозитория](https://github.com/karpov2/portfolio-backend/tags).
