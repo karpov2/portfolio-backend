@@ -6,7 +6,8 @@ const Unauthorized = require('../middleware/errors/unauthorized');
 const messages = require('../middleware/errors/messages');
 
 module.exports.exit = (req, res) => {
-    res.clearCookie('token').send({status: 'ok', message: 'Пользователь вышел из личного кабинета'})
+    res.clearCookie('token');
+    res.status(200).send({status: 'ok', message: 'Пользователь вышел из личного кабинета'});
 }
 
 module.exports.authorization = (req, res, next) => {
