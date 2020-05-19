@@ -35,7 +35,10 @@ module.exports.authorization = (req, res, next) => {
                 sameSite: true,
             });
 
-            res.status(200).send({ message: messages.authorization.success });
+            res.status(200).send({
+                message: messages.authorization.success,
+                user
+            });
         })
         .catch(next);
 };
