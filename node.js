@@ -18,9 +18,9 @@ mongoose.connect(config.DATABASE, {
         console.info('Database connected');
 
         const app = express();
+        app.use(cors(config.corsOptions));
         app.use(limiter);
         app.use(helmet());
-        app.use(cors(config.corsOptions));
         app.use(cookieParser()); // подключаем парсер кук как мидлвэр
         app.use(bodyParser.json()); // parse application/json
         app.use(router);

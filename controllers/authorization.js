@@ -7,7 +7,11 @@ const messages = require('../middleware/errors/messages');
 
 module.exports.exit = (req, res) => {
     res.clearCookie('token');
-    res.status(200).send({status: 'ok', message: 'Пользователь вышел из личного кабинета'});
+    res.status(200).send({
+        status: 'ok',
+        message: 'Пользователь вышел из личного кабинета',
+        userId: req.body.userId
+    });
 }
 
 module.exports.authorization = (req, res, next) => {
