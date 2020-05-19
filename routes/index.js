@@ -19,7 +19,7 @@ router.use('/signup', registration); // создание пользовател�
 router.use('/signin', authorization); // авторизация пользователя
 
 router.use(auth); // Аунтификация, проверка токена (на права доступа)
-router.post('/exit', exit); // выход из ЛК
+router.get('/exit', exit); // выход из ЛК
 router.use('/users', users);
 router.use('/articles', articles);
 router.all('*', errorPage);
