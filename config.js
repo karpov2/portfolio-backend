@@ -8,7 +8,8 @@ const {
 const corsOptions = {
     origin: ['http://localhost:8080', 'https://karpov2.github.io'],
     optionsSuccessStatus: 200,
-    credentials: true
+    credentials: true,
+    preflightContinue: true,
 }
 
 module.exports = {
