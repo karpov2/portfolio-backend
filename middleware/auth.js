@@ -12,11 +12,7 @@ module.exports = (req, res, next) => {
     const errors = new Unauthorized(messages.auth.unauthorized);
 
     // if (!token) throw next(errors);
-    if (!token) throw next({
-        message: 'Нет куки 1',
-        token,
-        cookies: req.cookies
-    });
+    if (!token) throw next('Нет куки 1');
 
     let payload;
     try {
@@ -24,11 +20,7 @@ module.exports = (req, res, next) => {
         payload = jwt.verify(token, config.JWT_SECRET);
     } catch (error) {
         // throw next(errors);
-        throw next({
-            message: 'Нет куки 2',
-            token,
-            cookies: req.cookies
-        });
+        throw next('Нет куки 2');
     }
 
     req.body.userId = payload._id; // записываем пейлоуд в объект запроса
