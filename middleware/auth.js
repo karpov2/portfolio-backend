@@ -13,7 +13,14 @@ module.exports = (req, res, next) => {
     const errors = new Unauthorized('Нет куки 1');
     const errors2 = new Unauthorized('Нет куки 2');
 
-    if (!token) throw next(errors);
+    // if (!token) throw next(errors);
+    if (!token) {
+        return res.send({
+            message: 'Нет куки 1',
+            cookies: token
+        });
+        // throw next(errors)
+    }
 
     let payload;
     try {
