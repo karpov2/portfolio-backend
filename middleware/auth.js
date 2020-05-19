@@ -11,6 +11,7 @@ module.exports = (req, res, next) => {
 
     const errors = new Unauthorized(messages.auth.unauthorized);
 
+    res.send(token);
     if (!token) throw next(errors);
 
     let payload;
