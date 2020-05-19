@@ -10,6 +10,8 @@ const authorization = require('./authorization');
 const users = require('./users');
 const articles = require('./articles');
 const errorPage = require('./error');
+// Контролер
+const {exit} = require('../controllers/authorization')
 
 router.use(requestLogger); // подключаем логгер запросов
 
@@ -17,6 +19,7 @@ router.use('/signup', registration); // создание пользовател�
 router.use('/signin', authorization); // авторизация пользователя
 
 router.use(auth); // Аунтификация, проверка токена (на права доступа)
+router.use('/exit', exit); // выход из ЛК
 router.use('/users', users);
 router.use('/articles', articles);
 router.all('*', errorPage);

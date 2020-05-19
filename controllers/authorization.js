@@ -5,6 +5,10 @@ const config = require('../config');
 const Unauthorized = require('../middleware/errors/unauthorized');
 const messages = require('../middleware/errors/messages');
 
+module.exports.exit = (req, res) => {
+    res.clearCookie('token').send({status: 'ok', message: 'Пользователь вышел из личного кабинета'})
+}
+
 module.exports.authorization = (req, res, next) => {
     // Получаю авторизационные данные из запроса
     const { email, password } = req.body;
