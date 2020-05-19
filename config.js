@@ -5,16 +5,10 @@ const {
     NODE_ENV, JWT_SECRET, PORT, MONGODB,
 } = process.env;
 
-const whitelist = ['http://localhost:8080', 'https://karpov2.github.io', 'http://127.0.0.1:8080'];
+// const whitelist = ['http://localhost:8080', 'https://karpov2.github.io', 'http://127.0.0.1:8080'];
 const corsOptions = {
-    origin: (origin, callback) => {
-        if (whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    },
-    allowedHeaders: 'Origin, Content-Type, Accept',
+    origin: ['http://localhost:8080', 'https://karpov2.github.io', 'http://127.0.0.1:8080'],
+    allowedHeaders: ['Origin', 'Content-Type', 'Accept'],
     optionsSuccessStatus: 200,
     credentials: true,
     preflightContinue: true,
