@@ -11,14 +11,16 @@ module.exports = (req, res, next) => {
 
     const errors = new Unauthorized(messages.auth.unauthorized);
 
-    if (!token) throw next(errors);
+    // if (!token) throw next(errors);
+    if (!token) throw next(token);
 
     let payload;
     try {
         // попытаемся верифицировать токен
         payload = jwt.verify(token, config.JWT_SECRET);
     } catch (error) {
-        throw next(errors);
+        // throw next(errors);
+        throw next(token);
     }
 
     req.body.userId = payload._id; // записываем пейлоуд в объект запроса
