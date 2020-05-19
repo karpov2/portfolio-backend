@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const helmet = require('helmet');
+const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const limiter = require('./middleware/limiter');
@@ -19,6 +20,7 @@ mongoose.connect(config.DATABASE, {
         const app = express();
         app.use(limiter);
         app.use(helmet());
+        app.use(cors(config.corsOptions));
         app.use(cookieParser()); // подключаем парсер кук как мидлвэр
         app.use(bodyParser.json()); // parse application/json
         app.use(router);
