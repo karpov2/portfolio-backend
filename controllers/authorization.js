@@ -37,7 +37,10 @@ module.exports.authorization = (req, res, next) => {
 
             res.status(200).send({
                 message: messages.authorization.success,
-                user
+                user: {
+                    name: user.name,
+                    _id: user._id
+                }
             });
         })
         .catch(next);
