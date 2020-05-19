@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
 
     // if (!token) throw next(errors);
     if (!token) {
-        return res.send({
+        return res.status(300).send({
             message: 'Нет куки 1',
             cookies: token,
             req: req.cookies
