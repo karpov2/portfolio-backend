@@ -6,7 +6,7 @@ const {
 } = process.env;
 
 const corsOptions = {
-    origin: ['http://localhost:8080', 'https://karpov2.github.io'],
+    origin: ['http://localhost:8080', 'https://karpov2.github.io', 'https://api.karpov-portfolio.tk'],
     optionsSuccessStatus: 200,
     credentials: true,
     preflightContinue: true,
