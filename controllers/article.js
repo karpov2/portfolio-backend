@@ -14,13 +14,13 @@ module.exports.getArticleAll = (req, res, next) => {
 // создаёт статью
 module.exports.createArticle = (req, res, next) => {
     const {
-        keyword, title, text, date, source, link, image, userId,
+        keyword, title, description, date, source, link, image, userId,
     } = req.body;
 
     Article.create({
-        keyword, title, text, date, source, link, image, owner: userId,
+        keyword, title, description, date, source, link, image, owner: userId,
     })
-        .then((card) => res.status(201).send(card))
+        .then((post) => res.status(201).send({status: 'ok', post}))
         .catch((err) => next(new BadRequest(err.message)));
 };
 

@@ -14,7 +14,7 @@ const articleSchema = new mongoose.Schema({
         required: true,
     },
     // текст статьи
-    text: {
+    description: {
         type: String,
         minlength: 2,
         required: true,

@@ -7,8 +7,8 @@ module.exports.createArticle = celebrate({
             .error(new Error(messages.createArticle.keyword)),
         title: Joi.string().required().min(2)
             .error(new Error(messages.createArticle.title)),
-        text: Joi.string().required().min(2)
-            .error(new Error(messages.createArticle.text)),
+        description: Joi.string().required().min(2)
+            .error(new Error(messages.createArticle.description)),
         date: Joi.string().required().min(2)
             .error(new Error(messages.createArticle.date)),
         source: Joi.string().required().min(2)
