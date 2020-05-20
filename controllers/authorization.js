@@ -41,7 +41,7 @@ module.exports.authorization = (req, res, next) => {
             res.cookie('token', token, {
                 maxAge: 3600000 * 24 * 7,
                 httpOnly: true,
-                sameSite: true,
+                // sameSite: true,
             });
 
             res.status(200).send({
