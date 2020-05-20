@@ -5,12 +5,11 @@ const config = require('../config');
 const Unauthorized = require('../middleware/errors/unauthorized');
 const messages = require('../middleware/errors/messages');
 
-module.exports.exit = (req, res, next) => {
+module.exports.exit = (req, res) => {
     res.clearCookie('token');
     res.status(200).send({
         status: 'ok',
-        message: 'Пользователь вышел из личного кабинета',
-        userId: req.body.userId
+        message: 'Пользователь вышел из личного кабинета'
     });
 }
 

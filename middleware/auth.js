@@ -9,27 +9,16 @@ module.exports = (req, res, next) => {
     // Достаем токен из кукана)
     const { token } = req.cookies;
 
-    // const errors = new Unauthorized(messages.auth.unauthorized);
-    const errors = new Unauthorized('Нет куки 1');
-    const errors2 = new Unauthorized('Нет куки 2');
+    const errors = new Unauthorized(messages.auth.unauthorized);
 
-    // if (!token) throw next(errors);
-    if (!token) {
-        return res.status(300).send({
-            message: 'Нет куки 1',
-            cookies: token,
-            req: req.cookies,
-            reqBody: req.body,
-        });
-        // throw next(errors)
-    }
+    if (!token) throw next(errors);
 
     let payload;
     try {
         // попытаемся верифицировать токен
         payload = jwt.verify(token, config.JWT_SECRET);
     } catch (error) {
-        throw next(errors2);
+        throw next(errors);
     }
 
     req.body.userId = payload._id; // записываем пейлоуд в объект запроса
