@@ -36,7 +36,7 @@ module.exports.deleteArticle = (req, res, next) => {
             }
 
             return Article.deleteOne(article)
-                .then(() => res.send({ message: messages.deleteArticle.delete }))
+                .then(() => res.send({ status: 'ok', message: messages.deleteArticle.delete }))
                 .catch(next);
         })
         .catch(next);
