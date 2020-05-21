@@ -6,11 +6,11 @@ const {
 } = process.env;
 
 const corsOptions = {
-    origin: ['http://localhost:8080', 'https://karpov2.github.io', 'http://127.0.0.1:8080'],
-    allowedHeaders: ['Origin', 'Content-Type', 'Accept'],
+    origin: ['http://localhost:8080', 'https://karpov2.github.io', 'http://127.0.0.1:8080', 'https://newsapi.org'],
+    // allowedHeaders: ['Origin', 'Content-Type', 'Accept'],
     optionsSuccessStatus: 200,
     credentials: true,
-    preflightContinue: true,
+    // preflightContinue: true,
 }
 
 module.exports = {
